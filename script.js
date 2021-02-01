@@ -115,6 +115,19 @@ if (!ext.supportLinearFiltering) {
 
 startGUI();
 
+// Close settings tab by pressing "Enter"
+const settings_tab = document.getElementsByClassName("dg main a")[0];
+document.addEventListener("keypress", (e) => {
+    console.log(settings_tab)
+    if (e.key === "Enter") {
+        if (settings_tab.style.display === "block") {
+            settings_tab.style.display = "none";
+        } else {
+            settings_tab.style.display = "block";
+        }
+    }
+});
+
 function getWebGLContext (canvas) {
     const params = { alpha: true, depth: false, stencil: false, antialias: false, preserveDrawingBuffer: false };
 
